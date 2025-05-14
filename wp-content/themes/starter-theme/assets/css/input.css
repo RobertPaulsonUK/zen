@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+}
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/Inter-Bold.woff2") format("woff2");
+}
+@font-face {
+    font-family: Garamond;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/Garamond.ttf") format("ttf");
+}
+
+@theme {
+    --font-inter: "Inter","sans-serif";
+    --font-garamond: "Garamond","sans-serif";
+    --color-warm-black: #3A3845;
+    --color-light-brown: #C69B7B;
+    --color-beige-peach: #F7CCAC;
+    --color-dark-brown: #826F66;
+    --color-neutral-800: #3A3845;
+    --color-neutral-700: #595667;
+    --color-neutral-600: #807F86;
+    --color-neutral-500: #A6A6A8;
+    --color-neutral-400: #CAC9CF;
+    --color-neutral-300: #E5E5E5;
+    --color-neutral-200: #F7F6F5;
+    --color-white-900: #FFFFFF;
+    --spacing-section: 40px;
+    --spacing-section-desktop: 80px;
+    --breakpoint-hover-hover: {'raw': '(any-hover: hover)'};
+    --breakpoint-hover-none: {'raw': '(any-hover: none)'};
+}
+@custom-variant hover-hover {
+    @media (hover: hover) {
+        @slot;
+    }
+}
+@custom-variant hover-none {
+    @media (hover: none) {
+        @slot;
+    }
+}
+.registration-form-email {
+    width: 100%;
+    padding: 14px 20px;
+    text-align: center;
+    color: #595667;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    border-bottom: 1px solid #595667;
+}
+.registration-form-email::placeholder {
+    text-align: center;
+    color: #595667;
+}
+.registration-form-email:focus {
+    outline: none;
+}
+.text-block {
+    color: #595667;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.text-block p {
+    margin-top: 12px;
+}
+.text-block p:first-child {
+    margin-top: 0;
+}
+.text-block h2 {
+    margin-top: 20px;
+    color: #3A3845;
+    font-family: Garamond;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 114.286% */
+    text-transform: uppercase;
+}
+.text-block h3 {
+    margin-top: 20px;
+    color: #3A3845;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+}
+.text-block ul {
+    margin-top: 20px;
+    list-style: disc;
+    padding-left: 25px;
+}
+.text-block ol {
+    margin-top: 20px;
+    padding-left: 25px;
+    list-style-type: decimal;
+}
+.map-wrapper iframe {
+    width: 100%;
+}
+.page-numbers {
+    display: flex;
+    width: 27px;
+    height: 27px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 22px;
+    color: #3A3845;
+}
+.page-numbers:not(.next):not(.prev) {
+    border: 1px solid #3A3845;
+}
+.page-numbers.current {
+    color: #FFF;
+    background: #3A3845;
+}
+.woocommerce-pagination ul.page-numbers {
+    margin: 40px auto 0;
+    gap: 10px;
+}
+.product-price ins {
+    text-decoration: none;
+}
+.product-price del {
+    text-decoration: line-through;
+    opacity: 0.7;
+    transform: translateY(-25%);
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance:textfield;
+}
+.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+ul.psfw-social-icons  {
+    margin: 0 !important;
+}
+
+.swiper-button-disabled {
+    opacity: 0.3;
+}

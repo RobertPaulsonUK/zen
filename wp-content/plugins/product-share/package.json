@@ -1,0 +1,43 @@
+{
+  "name": "product-share",
+  "version": "1.2.17",
+  "description": "Display social icons on the different spots of product pages to share your WooCommerce product on social media sites.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "min-js": "minify  public/js/public.js > public/js/public.min.js",
+    "min-css": "minify  public/css/public.css > public/css/public.min.css",
+    "rtl-css": "rtlcss  public/css/public.css public/css/public-rtl.css",
+    "rtl-min-css": "minify  public/css/public-rtl.css > public/css/public.min-rtl.css",
+    "admin-min-js": "minify  admin/js/backend.js > admin/js/backend.min.js",
+    "admin-min-css": "minify  admin/css/backend.css > admin/css/backend.min.css",
+    "pot": "npx @wp-blocks/make-pot . languages/product-share.pot",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "all": "npm-run-all --serial min-js min-css rtl-css rtl-min-css admin-min-js admin-min-css pot"
+  },
+  "author": "wpxteam",
+  "license": "ISC",
+  "dependencies": {
+    "minify": "^9.2.0",
+    "npm-run-all": "^4.1.5",
+    "rtlcss": "^4.3.0",
+    "wp-cli": "^0.0.5"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": false,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.8.1"
+  }
+}

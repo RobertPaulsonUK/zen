@@ -1,0 +1,9 @@
+<?php
+    get_template_part('sections/home/intro','section');
+    get_template_part('sections/home/category','section');
+    get_template_part('sections/home/sale','section');
+    get_template_part('sections/home/sallers','section');
+    get_template_part('sections/home/about','section');
+    get_template_part('sections/home/new-arrivals','section');
+    get_template_part('sections/home/blog','section');
+    get_template_part('components/global/registration','block');

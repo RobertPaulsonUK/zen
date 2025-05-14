@@ -1,0 +1,364 @@
+# Copyright (C) 2025 product-share
+# This file is distributed under the GPLv2 or later license.
+msgid ""
+msgstr ""
+"Project-Id-Version: product-share 1.2.17\n"
+"Report-Msgid-Bugs-To: WPXtension <EMAIL>\n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"POT-Creation-Date: 2025-04-22T06:39:01.901Z\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
+"Last-Translator: WPXtension <EMAIL>\n"
+"Language-Team: WPXtension <EMAIL>\n"
+"X-Generator: @wp-blocks/make-pot 1.4.0\n"
+"Language: en\n"
+"domain: X-Domain: product-share\n"
+
+#: product-share.php
+#. Name of the plugin
+msgid "Social Share for WooCommerce"
+msgstr ""
+
+#: product-share.php
+#. Url of the plugin
+msgid "https://wordpress.org/plugins/product-share/"
+msgstr ""
+
+#: product-share.php
+#. Description of the plugin
+msgid ""
+"Display social icons on the different spots of product pages to share your "
+"WooCommerce product on social media."
+msgstr ""
+
+#: product-share.php
+#. Author of the plugin
+msgid "WPXtension"
+msgstr ""
+
+#: product-share.php
+#. Author URI of the plugin
+msgid "https://wpxtension.com"
+msgstr ""
+
+#: product-share.php:37
+msgid "<strong>Social Share for WooCommerce</strong> is an add-on of "
+msgstr ""
+
+#: product-share.php:45
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/layout.php:4
+msgid "Social Share for WooCommerce Settings"
+msgstr ""
+
+#: includes/layout.php:33
+msgid "General"
+msgstr ""
+
+#: includes/layout.php:34
+msgid " Advanced"
+msgstr ""
+
+#: includes/layout.php:98
+#: includes/layout.php:104
+msgid "Save Settings"
+msgstr ""
+
+#: includes/layout.php:100
+#: includes/layout.php:106
+msgid "Are you sure to reset?"
+msgstr ""
+
+#: includes/layout.php:100
+#: includes/layout.php:106
+msgid "Reset Current Tab"
+msgstr ""
+
+#: includes/class-product-share-icons.php:243
+msgid "Check this out: "
+msgstr ""
+
+#: includes/class-product-share-icons.php:259
+#: includes/class-product-share-icons.php:264
+#: includes/class-product-share-front.php:85
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: includes/class-product-share-icons.php:282
+#: includes/class-product-share-icons.php:287
+#: includes/class-product-share-front.php:328
+msgid "All Icon"
+msgstr ""
+
+#: includes/class-product-share-front.php:86
+msgid "Copied to Clipboard"
+msgstr ""
+
+#: includes/class-product-share-front.php:145
+#: includes/class-product-share-front.php:357
+#: includes/setting-tab/advanced.php:20
+msgid "Share On:"
+msgstr ""
+
+#: includes/class-product-share-front.php:194
+#: includes/setting-tab/general.php:37
+msgid "Email"
+msgstr ""
+
+#: includes/class-product-share-front.php:322
+msgid "Copy Link"
+msgstr ""
+
+#: includes/class-product-share-admin-settings.php:141
+msgid "Settings"
+msgstr ""
+
+#: includes/class-product-share-admin-settings.php:147
+msgid "Go Premium"
+msgstr ""
+
+#: includes/class-product-share-admin-settings.php:209
+msgid "Security check"
+msgstr ""
+
+#: includes/wpxtension/wpx-setting-fields.php:43
+msgid "Unlock this feature >>>"
+msgstr ""
+
+#: includes/wpxtension/wpx-setting-fields.php:235
+msgid "Added License"
+msgstr ""
+
+#: includes/wpxtension/wpx-setting-fields.php:241
+msgid "License not added yet!"
+msgstr ""
+
+#: includes/setting-tab/general.php:9
+msgid "Icons to Display"
+msgstr ""
+
+#: includes/setting-tab/general.php:47
+msgid "More Icons"
+msgstr ""
+
+#: includes/setting-tab/general.php:102
+msgid "Icon Appearance"
+msgstr ""
+
+#: includes/setting-tab/general.php:132
+msgid "Social Button Shape"
+msgstr ""
+
+#: includes/setting-tab/general.php:169
+#: includes/setting-tab/general.php:197
+#: includes/setting-tab/general.php:211
+#: includes/setting-tab/general.php:274
+#: includes/setting-tab/general.php:334
+#: includes/setting-tab/general.php:508
+#: includes/setting-tab/advanced.php:19
+#: includes/setting-tab/advanced.php:51
+#: includes/setting-tab/advanced.php:66
+#: includes/setting-tab/advanced.php:81
+msgid "New"
+msgstr ""
+
+#: includes/setting-tab/general.php:177
+msgid "Enable \"Copy to Clipboard\""
+msgstr ""
+
+#: includes/setting-tab/general.php:181
+msgid "Display \"Copy to Clipboard\" button to copy product link."
+msgstr ""
+
+#: includes/setting-tab/general.php:182
+msgid ""
+"Note: To get it to work, your site should have a secure connection. For "
+"Example: https://example.com"
+msgstr ""
+
+#: includes/setting-tab/general.php:191
+msgid "Enable \"All Icon\" Button"
+msgstr ""
+
+#: includes/setting-tab/general.php:195
+msgid ""
+"Display a \"plus\" button to show a popup/modal containing all the social "
+"icons\"."
+msgstr ""
+
+#: includes/setting-tab/general.php:205
+msgid "Enable Popup Dismiss"
+msgstr ""
+
+#: includes/setting-tab/general.php:209
+msgid "Display a \"Close\" button on the social icons popup to dismiss."
+msgstr ""
+
+#: includes/setting-tab/general.php:227
+msgid "Where to Display"
+msgstr ""
+
+#: includes/setting-tab/general.php:267
+msgid "Enable Icon Title"
+msgstr ""
+
+#: includes/setting-tab/general.php:271
+msgid "Display title before social icons."
+msgstr ""
+
+#: includes/setting-tab/general.php:282
+msgid "Enable Encode URL"
+msgstr ""
+
+#: includes/setting-tab/general.php:286
+msgid "Encode the product URL."
+msgstr ""
+
+#: includes/setting-tab/general.php:287
+msgid ""
+"Note: It will not affect `copy to clipboard` feature. Brwosers can\\'t read "
+"encoded URL."
+msgstr ""
+
+#: includes/setting-tab/general.php:296
+msgid "Enable Tooltip"
+msgstr ""
+
+#: includes/setting-tab/general.php:300
+msgid "Display tooltip over social icons."
+msgstr ""
+
+#: includes/setting-tab/general.php:311
+msgid "Enable Variation Link"
+msgstr ""
+
+#: includes/setting-tab/general.php:315
+msgid ""
+"Change the product URL to variation URL after selecting all attribute "
+"values from the dropdowns."
+msgstr ""
+
+#: includes/setting-tab/general.php:326
+msgid "Container Class"
+msgstr ""
+
+#: includes/setting-tab/general.php:330
+msgid ""
+"Give <code>comma (,)</code> after each target classes. <b>Examples:</b> "
+"<code>.product.product-type-variable</code>. <br>Target a container to "
+"ensure that both `variation_id input` and `social share icons` are inside "
+"of it."
+msgstr ""
+
+#: includes/setting-tab/general.php:331
+msgid ""
+"Keep blank, if you don\\'t have any issues with variation dropdown(s) base "
+"share URL. This field is for fixing variation dropdown(s) base URL changing "
+"compatibility issue."
+msgstr ""
+
+#: includes/setting-tab/general.php:353
+msgid "Enable Floating Icon"
+msgstr ""
+
+#: includes/setting-tab/general.php:357
+msgid "Enable Floating Social Icon on Single Product Page."
+msgstr ""
+
+#: includes/setting-tab/general.php:368
+#: includes/setting-tab/general.php:445
+msgid "Position"
+msgstr ""
+
+#: includes/setting-tab/general.php:400
+msgid "Enable on Archive/Shop"
+msgstr ""
+
+#: includes/setting-tab/general.php:404
+msgid "Enable Social Icon on Archive/Shop page for each Product."
+msgstr ""
+
+#: includes/setting-tab/general.php:415
+msgid "Button Appearance"
+msgstr ""
+
+#: includes/setting-tab/general.php:470
+msgid "Shape"
+msgstr ""
+
+#: includes/setting-tab/general.php:516
+msgid "Color"
+msgstr ""
+
+#: includes/setting-tab/general.php:530
+#: includes/setting-tab/advanced.php:135
+#: includes/setting-tab/advanced.php:229
+msgid "Background Color"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:3
+msgid "Icon Title Style Settings"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:12
+msgid "Title Text"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:17
+msgid "Note: Set your own title here. Default is \"Share On:\""
+msgstr ""
+
+#: includes/setting-tab/advanced.php:29
+msgid "Text Weight"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:60
+#: includes/setting-tab/advanced.php:177
+msgid "Font Size"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:75
+msgid "Title Color"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:88
+msgid "Tooltip Style Settings"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:98
+msgid "Tooltip Text Color"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:112
+msgid "Tooltip Background Color"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:125
+msgid "Basic Style Settings"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:149
+#: includes/setting-tab/advanced.php:243
+msgid "Border Color"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:163
+#: includes/setting-tab/advanced.php:257
+msgid "Text Color"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:191
+msgid "Width"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:205
+msgid "Height"
+msgstr ""
+
+#: includes/setting-tab/advanced.php:219
+msgid "Hover Style Settings"
+msgstr ""
