@@ -1,10 +1,9 @@
 jQuery(document).ready(function($) {
-    const ajaxUrl = args.ajax_url
-    let step = 0
-    $('#login-form, #register-form').on('submit', function (event) {
+    const ajaxUrl = data.ajax_url
+    $('#form-edit-account-form').on('submit', function (event) {
         event.preventDefault()
         var form = $(this);
-        var action = $(this).is('#login-form') ? 'zen_login_user' : 'zen_register_user'
+        var action = 'zen_update_account_info_general';
         var formData = form.serialize() + `&action=${action}`;
         $.ajax({
             url: ajaxUrl,
@@ -17,9 +16,7 @@ jQuery(document).ready(function($) {
             success: function( data ) {
                 if(data.success === true) {
                     setSuccessMessage(data.message)
-                    window.setTimeout(function () {
-                        window.location.href = data.redirect
-                    },3000)
+                    emptyPasswordsFields()
                 } else {
                     setErrorMessage(data.message)
                 }
@@ -29,46 +26,29 @@ jQuery(document).ready(function($) {
                 var fields = data.fields
                 var message = data.message
                 setErrorMessage(message)
-                setErrorsFields(fields,$(this).is('#login-form'))
+                setErrorsFields(fields,form)
             },
             complete: function () {
                 form.find('button').removeClass('disabled')
             }
         });
     })
-    $('#reset-password-form').on('submit',function (event) {
+    $('#form-edit-billing').on('submit', function (event) {
         event.preventDefault()
         var form = $(this);
-        var nonces = [
-            args.reset_email_nonce,
-            args.reset_code_nonce,
-            args.reset_password_nonce]
-        var actions = [
-            'zen_send_reset_token',
-            'zen_check_reset_code',
-            'zen_send_new_password'
-        ]
-        var formData = form.serialize() + `&action=${actions[step]}` + `&nonce=${nonces[step]}`
+        var action = 'zen_update_user_billing_info';
+        var formData = form.serialize() + `&action=${action}`;
         $.ajax({
             url: ajaxUrl,
             type: 'POST',
             data: formData,
             beforeSend: function( xhr ) {
-                console.log(step)
-                console.log(formData)
-                form.find('button').addClass('disabled')
-                form.find('input').removeClass('error')
+
+                // form.find('button').addClass('disabled')
             },
             success: function( data ) {
                 if(data.success === true) {
                     setSuccessMessage(data.message)
-                    if(data.redirect) {
-                        window.setTimeout(function () {
-                            window.location.href = data.redirect
-                        },3000)
-                    } else  {
-                        step = updateStep(step)
-                    }
                 } else {
                     setErrorMessage(data.message)
                 }
@@ -80,6 +60,37 @@ jQuery(document).ready(function($) {
             },
             complete: function () {
                 form.find('button').removeClass('disabled')
+            }
+        });
+    })
+    $('#countries-select').on('change',function (event) {
+        var stateSelect = $('#states-select')
+        var countryCode = event.target.value;
+        var data = {
+            country : countryCode,
+            action  : 'zen_get_current_states'
+        }
+        $.ajax({
+            url: ajaxUrl,
+            type: 'POST',
+            data: data,
+            beforeSend: function( xhr ) {
+                stateSelect.addClass('disabled')
+                stateSelect.find('option:not(:first)').remove();
+            },
+            success: function( response ) {
+                var states = response.data
+                if(states) {
+                    Object.entries(states).forEach(function([code, name]) {
+                        stateSelect.append('<option value="' + code + '">' + name + '</option>');
+                    });
+                }
+            },
+            error(response) {
+                stateSelect.removeClass('disabled')
+            },
+            complete: function () {
+                stateSelect.removeClass('disabled')
             }
         });
     })
@@ -100,26 +111,22 @@ jQuery(document).ready(function($) {
             successModal.classList.add('hidden')
         },3000)
     }
-    function updateStep(step)
-    {
-        const currentLabel = document.querySelector(`#reset-password-form label[data-step="${step}"]`),
-             nextLabel = document.querySelector(`#reset-password-form label[data-step="${step + 1}"]`),
-            input = nextLabel.querySelector('input')
-        step++
-        currentLabel.classList.add('hidden')
-        input.setAttribute('required',true)
-        input.setAttribute('name',step === 1 ? 'code' : 'password')
-        nextLabel.classList.remove('hidden')
-        return step
-    }
-    function setErrorsFields(fields,isLogin = true)
+    function setErrorsFields(fields,isGeneral = true)
     {
         if(fields.length === 0) {
             return
         }
-        const form = isLogin ? document.querySelector('#login-form') : document.querySelector('#register-form')
+        const form = isGeneral ? document.querySelector('#form-edit-account-form') : document.querySelector('#form-edit-billing')
         fields.forEach(field => {
             form.querySelector(`input[name=${field}]`).classList.add('error')
+        })
+    }
+    function emptyPasswordsFields()
+    {
+        const form =document.querySelector('#form-edit-account-form'),
+            fields = ['password_current','password_new','password_repeat']
+        fields.forEach(field => {
+            form.querySelector(`input[name=${field}]`).value = ''
         })
     }
 

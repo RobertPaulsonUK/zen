@@ -69,5 +69,21 @@
 
             return in_array($product_id,$product_ids);
         }
+
+        public static function get_product_ids():array
+        {
+            $ids = [];
+            $wishlist = self::get_wishlist();
+            if(!$wishlist) {
+                return $ids;
+            }
+            $wishlist_items = $wishlist->get_items();
+
+            foreach ($wishlist_items as $item) {
+                $ids[] = $item['prod_id'];
+            }
+
+            return $ids;
+        }
     }
 

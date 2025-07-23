@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
     const postId = $('body').data('post-id'),
-        ajaxUrl = data.ajax_url
+        ajaxUrl = data.ajax_url,
+        html = document.querySelector('html')
 
     if (postId && ajaxUrl) {
         let data = {
@@ -53,6 +54,7 @@ jQuery(document).ready(function($) {
             product_id : productId,
             process : process
         }
+        var removeItemAfterDeleting = btn.attr('data-in-wishlist') === 'true'
         $.ajax({
             url: ajaxUrl,
             type: 'POST',
@@ -65,6 +67,16 @@ jQuery(document).ready(function($) {
             },
             complete: function () {
                 btn.removeClass('hold')
+                if(process === processTypes[1] && removeItemAfterDeleting) {
+                    var removeItem = btn.closest('.account-wishlist-item')
+                    var wrapper = $('#account-wishlist-wrapper')
+                    var emptyWishlistMessage = $('#empty-wishlist-message')
+                    removeItem.remove()
+                    if (!wrapper.find('.account-wishlist-item').length) {
+                        wrapper.remove()
+                        emptyWishlistMessage.removeClass('hidden')
+                    }
+                }
             }
         })
     });
@@ -96,6 +108,7 @@ jQuery(document).ready(function($) {
             complete: function () {
                 btn.removeClass('hold')
                 if(!isRedirect) {
+                    html.classList.add('scroll-hidden')
                     $('#cart-modal').removeClass('hidden')
                     window.setTimeout(function () {
                         $('#cart-modal').attr('data-open','true')
@@ -152,5 +165,35 @@ jQuery(document).ready(function($) {
             }
         })
     });
+    $('.view-order-link').on('click',function (e) {
+        e.preventDefault();
+        var btn = $(this);
+        var orderId = btn.data('order-id')
+        var orderModal = $('#order-view-modal')
+        var orderContainer = $('#order-view-container')
+        var preloader = `<div class="w-fit"><span data-text="Loading..."
+                        class="active-text initial-white text-white-900/0 relative">
+                    Loading...
+                </span></div>`;
+        var data = {
+            action: 'zen_view_account_order_item',
+            order_id : orderId
+        }
+        $.ajax({
+            url: ajaxUrl,
+            type: 'POST',
+            data: data,
+            beforeSend: function( xhr ) {
+                orderModal.removeClass('hidden')
+                html.classList.add('scroll-hidden')
+                orderContainer.html(preloader)
+            },
+            success: function( data ) {
+                orderContainer.html(data)
+            },
+            complete: function () {
+            }
+        })
+    })
 });
 

@@ -15,6 +15,32 @@ document.addEventListener('DOMContentLoaded',
         cartModalInitHandler()
         tabsHandler()
         passwordInputEyeHandler()
+        modalGeneralHandler()
+
+        function modalGeneralHandler()
+        {
+            const modals = document.querySelectorAll('.modal-overlay')
+            if(modals.length === 0) {
+                return
+            }
+            modals.forEach(modal => {
+                const modalCloseWrapper = modal.querySelector('.modal-close-overlay'),
+                    modalBody = modal.querySelector('.modal-body'),
+                    modalCloseBtn = modal.querySelector('.modal-close-btn')
+                modalCloseBtn.addEventListener('click',() => closeModal())
+                modalCloseWrapper.addEventListener('click',(event) => {
+                    let target = event.target
+                    if(target === modalBody || target.closest('.modal-body')) {
+                        return
+                    }
+                    closeModal()
+                })
+                function closeModal() {
+                    modal.classList.add('hidden')
+                    html.classList.remove('scroll-hidden')
+                }
+            })
+        }
 
         function passwordInputEyeHandler()
         {
@@ -46,6 +72,7 @@ document.addEventListener('DOMContentLoaded',
             authInitBtns.forEach(btn => {
                 btn.addEventListener('click',() => {
                     authModal.classList.remove('hidden')
+                    html.classList.add('scroll-hidden')
                 })
             })
             authModal.addEventListener('click',(event) => {
@@ -54,9 +81,11 @@ document.addEventListener('DOMContentLoaded',
                     return
                 }
                 authModal.classList.add('hidden')
+                html.classList.remove('scroll-hidden')
             })
             closeModalBtn.addEventListener('click',() => {
                 authModal.classList.add('hidden')
+                html.classList.remove('scroll-hidden')
             })
         }
 
@@ -114,6 +143,7 @@ document.addEventListener('DOMContentLoaded',
 
             function openCartModal() {
                 cartModal.classList.remove('hidden')
+                html.classList.add('scroll-hidden')
                 window.setTimeout(function () {
                     cartModal.setAttribute('data-open', true)
                 }, 100)
@@ -124,6 +154,7 @@ document.addEventListener('DOMContentLoaded',
                 window.setTimeout(function () {
                     cartModal.classList.add('hidden')
                 }, 300)
+                html.classList.remove('scroll-hidden')
             }
         }
 
@@ -164,17 +195,20 @@ document.addEventListener('DOMContentLoaded',
                     menu.setAttribute('data-open', false)
                     burger.classList.remove('active')
                     window.setTimeout(() => header.setAttribute('data-menu-open', false), 500)
+                    html.classList.add('scroll-hidden')
                 } else {
                     header.setAttribute('data-menu-open', true)
                     burger.classList.add('active')
                     menu.setAttribute('data-open', true)
+                    html.classList.remove('scroll-hidden')
                 }
             })
         }
 
         function searchModalHandler() {
             const searchInitBtns = document.querySelectorAll('.search-button'),
-                searchModal = document.querySelector('#search-modal')
+                searchModal = document.querySelector('#search-modal'),
+                form = searchModal.querySelector('form')
             if (searchInitBtns.length === 0 || !searchModal) {
                 return
             }
@@ -189,6 +223,7 @@ document.addEventListener('DOMContentLoaded',
                     return
                 }
                 searchModal.setAttribute('data-open', 'false')
+                form.reset()
             })
         }
 

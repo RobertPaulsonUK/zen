@@ -1,4 +1,4 @@
-<div data-open="false" id="search-modal" class="flex fixed px-4 bg-warm-black md:bg-transparent inset-0 backdrop-blur-xs items-center justify-center cursor-pointer opacity-0 pointer-events-none z-[-100] invisible transition-opacity duration-500 linear data-[open=true]:opacity-[1] data-[open=true]:visible data-[open=true]:z-[200] data-[open=true]:pointer-events-auto">
+<div data-open="false" id="search-modal" class="flex fixed px-4 bg-warm-black inset-0 backdrop-blur-xs items-center justify-center cursor-pointer opacity-0 pointer-events-none z-[-100] invisible transition-opacity duration-500 linear data-[open=true]:opacity-[1] data-[open=true]:visible data-[open=true]:z-[200] data-[open=true]:pointer-events-auto">
     <form class="relative max-w-[400px] w-full cursor-static search-form"
           role="search"
           method="GET"

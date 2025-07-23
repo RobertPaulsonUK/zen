@@ -30,7 +30,7 @@
         }
         $is_header_menu = $args->menu->slug === 'header-menu';
         if($is_header_menu) {
-            $atts['class'] = 'text-lg font-normal text-warm-black';
+            $atts['class'] = 'text-lg font-normal text-warm-black header-link lg:relative';
         } else {
             if(in_array('menu-item-has-children',$item->classes)) {
                 $atts['class'] = 'text-base font-semibold text-neutral-100 uppercase';

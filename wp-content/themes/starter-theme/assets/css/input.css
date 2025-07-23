@@ -84,13 +84,13 @@
     font-weight: 400;
     line-height: 24px;
 }
-.text-block p {
+.text-block p:not([class]) {
     margin-top: 12px;
 }
 .text-block p:first-child {
     margin-top: 0;
 }
-.text-block h2 {
+.text-block h2:not([class]) {
     margin-top: 20px;
     color: #3A3845;
     font-family: Garamond;
@@ -100,7 +100,7 @@
     line-height: 32px; /* 114.286% */
     text-transform: uppercase;
 }
-.text-block h3 {
+.text-block h3:not([class]) {
     margin-top: 20px;
     color: #3A3845;
     font-family: Inter;
@@ -109,12 +109,12 @@
     font-weight: 600;
     line-height: 24px; /* 133.333% */
 }
-.text-block ul {
+.text-block ul:not([class]) {
     margin-top: 20px;
     list-style: disc;
     padding-left: 25px;
 }
-.text-block ol {
+.text-block ol:not([class]) {
     margin-top: 20px;
     padding-left: 25px;
     list-style-type: decimal;
@@ -169,7 +169,53 @@ input[type=number] {
 ul.psfw-social-icons  {
     margin: 0 !important;
 }
-
 .swiper-button-disabled {
     opacity: 0.3;
+}
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid #3A3845;
+    margin-top: 12px;
+    outline: 0;
+}
+.wc-block-components-checkout-place-order-button {
+    @apply w-full max-w-full my-4 flex items-center justify-center h-10 mx-auto py-[15px] px-[18px] border lg:border-transparent bg-neutral-800 text-neutral-100 text-sm font-semibold uppercase cursor-pointer transition-colors duration-300 ease-linear hover:text-neutral-800 hover:bg-neutral-100 hover:border-neutral-800;
+}
+.wc-block-components-totals-coupon__button {
+    @apply w-fit flex items-center justify-center h-10 mt-3 py-[15px] px-[18px] border lg:border-transparent bg-neutral-800 text-neutral-100 text-sm font-semibold uppercase cursor-pointer transition-colors duration-300 ease-linear hover:text-neutral-800 hover:bg-neutral-100 hover:border-neutral-800;
+
+}
+.wc-block-components-checkout-return-to-cart-button {
+    display: none !important;
+}
+.form-button {
+    @apply w-fit mx-auto flex items-center justify-center h-10 py-4 px-10 border lg:border-transparent bg-neutral-800 text-neutral-100 text-sm font-semibold uppercase cursor-pointer transition-colors duration-300 ease-linear hover:text-neutral-800 hover:bg-neutral-100 hover:border-neutral-800;
+}
+.wpcf7 form.sent .wpcf7-response-output {
+    border-color: #3A3845;
+}
+.header-link::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    width: 0;
+    height: 1.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    background: #3A3845;
+    transition: width .2s ease-in-out;
+}
+@media (any-hover: hover) {
+    .header-link:hover::before {
+        width: 100%;
+    }
+}
+html.scroll-hidden, html.scroll-hidden body {
+    overflow-y: hidden;
 }

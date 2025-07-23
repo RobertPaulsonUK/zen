@@ -28,3 +28,7 @@
         wp_send_json_success(['message' => $message]);
 
     }
+    function get_wishlist_product_ids():array
+    {
+        return WooWishlistClass::get_product_ids();
+    }

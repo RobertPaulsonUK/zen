@@ -9,9 +9,9 @@
         <div class="flex flex-col gap-4">
             <label class="w-full">
                 <span class="form-title">
-                    <?php esc_html_e( 'Login or email address', 'robert-theme' ); ?>
+                    <?php esc_html_e( 'Email address', 'robert-theme' ); ?>
                 </span>
-                <input type="text" class="form-input" name="login" placeholder="Login or email address" required />
+                <input type="email" class="form-input" name="login" placeholder="Email address" required />
             </label>
             <label class="w-full relative">
                 <span class="form-title">

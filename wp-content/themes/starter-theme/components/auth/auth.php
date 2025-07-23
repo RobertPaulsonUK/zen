@@ -27,5 +27,3 @@
         </div>
     </div>
 </div>
-<?php get_template_part('components/auth/error','modal') ?>
-<?php get_template_part('components/auth/success','modal') ?>

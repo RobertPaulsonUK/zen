@@ -10,7 +10,7 @@
                      alt="<?= esc_attr($title) ?>"
                      width="120px"
                      height="80px"
-                     title="<?= esc_attr($title) ?>">
+                     title="<?= esc_attr($title) ?>" class="max-h-20 object-cover">
             </a>
         </div>
         <a href="<?= esc_url(get_permalink()) ?>">

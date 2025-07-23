@@ -9,6 +9,8 @@
     require get_template_directory() . '/woocommerce/inc/color-product-meta.php';
     require get_template_directory() . '/woocommerce/inc/ajax-update-cart-item.php';
     require get_template_directory() . '/woocommerce/inc/ajax-search.php';
+    require get_template_directory() . '/woocommerce/inc/ajax-view-order.php';
+    require get_template_directory() . '/woocommerce/inc/ajax-update-account-details.php';
 
     function print_single_product_price( WC_Product $product,string $text_class = 'text-sm'):void
     {
@@ -195,3 +197,51 @@
         </section>
         <?php
     }
+
+//quantity
+//    add_filter( 'woocommerce_checkout_cart_item_quantity', 'glasses_add_qty_field', 25, 3 );
+//    function glasses_add_qty_field( $product_quantity, $cart_item, $cart_item_key ) {
+//
+//        // пропустим объект товара через фильтр, на всякий случай
+//        $product = apply_filters( 'woocommerce_cart_item_product', $cart_item[ 'data' ], $cart_item, $cart_item_key );
+//
+//        // если включена опция на продажу товара индивидуально, неплохо бы её учесть
+//        if( $product->is_sold_individually() ) {
+//            // ничего не делаем
+//            return $product_quantity;
+//        }
+//
+//        // выводим поле изменения количества товара
+//        $product_quantity = woocommerce_quantity_input(
+//            array(
+//                'input_name'  => 'shipping_method_qty_' . $product->get_id(),
+//                'input_value' => $cart_item[ 'quantity' ],
+//                'max_value'   => $product->get_max_purchase_quantity(),
+//                'min_value'   => '0',
+//            ),
+//            $product,
+//            false
+//        );
+//        $product_quantity .= '<input type="hidden" name="product_key_' . $product->get_id() . '" value="' . $cart_item_key . '">';
+//
+//        return $product_quantity;
+//
+//    }
+//
+//    add_action( 'woocommerce_checkout_update_order_review', 'glasses_update_item_quantity_checkout' );
+//    function glasses_update_item_quantity_checkout( $post_data ) {
+//
+//        parse_str( $post_data, $post_data_array );
+//        $updated_qty = false;
+//        foreach ( $post_data_array as $key => $value ) {
+//            if( 'shipping_method_qty_' === substr( $key, 0, 20 ) ) {
+//                $id = substr( $key, 20 );
+//                WC()->cart->set_quantity( $post_data_array[ 'product_key_' . $id ], $post_data_array[ $key ], false );
+//                $updated_qty = true;
+//            }
+//        }
+//        if ( $updated_qty ) {
+//            WC()->cart->calculate_totals();
+//        }
+//    }
+

@@ -9,17 +9,16 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<section class="pb-section md:pb-section-desktop">
+    <div class="container px-4 mx-auto">
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <h1 class="<?= esc_attr(heading_classes()) ?>">
+                <?= esc_html($title) ?>
+            </h1>
+            <div class="mt-8 text-block">
+                <?php the_content(); ?>
+            </div>
+        </article><!-- #post-<?php the_ID(); ?> -->
+    </div>
+</section>
 
-	<?php robert_theme_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content();
-		?>
-	</div><!-- .entry-content -->
-
-</article><!-- #post-<?php the_ID(); ?> -->

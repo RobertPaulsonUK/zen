@@ -24,6 +24,8 @@
 	</footer><!-- #colophon -->
     <?php get_template_part('components/global/search','modal') ?>
     <?php get_template_part('components/auth/auth') ?>
+    <?php get_template_part('components/global/error','modal') ?>
+    <?php get_template_part('components/global/success','modal') ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

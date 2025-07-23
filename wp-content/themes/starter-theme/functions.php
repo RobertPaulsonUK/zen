@@ -137,6 +137,10 @@ require get_template_directory() . '/woocommerce/inc/wc-functions.php';
  * Add file with custom auth.
  */
 require get_template_directory() . '/inc/ajax-auth.php';
+/**
+ * Add Mail class.
+ */
+require get_template_directory() . '/inc/Mail.php';
 
 
 
