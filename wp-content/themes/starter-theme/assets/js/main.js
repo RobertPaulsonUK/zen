@@ -195,12 +195,12 @@ document.addEventListener('DOMContentLoaded',
                     menu.setAttribute('data-open', false)
                     burger.classList.remove('active')
                     window.setTimeout(() => header.setAttribute('data-menu-open', false), 500)
-                    html.classList.add('scroll-hidden')
+                    html.classList.remove('scroll-hidden')
                 } else {
                     header.setAttribute('data-menu-open', true)
                     burger.classList.add('active')
                     menu.setAttribute('data-open', true)
-                    html.classList.remove('scroll-hidden')
+                    html.classList.add('scroll-hidden')
                 }
             })
         }

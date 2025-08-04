@@ -246,3 +246,7 @@ input[type=submit] {
     height: 100%;
     justify-content: space-between;
 }
+.form-focus-button:focus {
+    background: #3A3845;
+    color: #FFF;
+}

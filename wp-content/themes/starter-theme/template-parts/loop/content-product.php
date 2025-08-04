@@ -48,7 +48,7 @@
                 } elseif($type === 'variable') {
                     ?>
                         <a href="<?= esc_url($permalink) ?>" class="w-full mt-5 block flex items-center justify-center h-[40px] cursor-pointer text-sm font-semibold uppercase py-[15px] px-[18px] text-center text-neutral-800 border border-neutral-800 transition-colors duration-300 linear hover:bg-neutral-800 hover:text-white-900">
-                            <?php esc_html_e('Choose product','robert-theme') ?>
+                            <?php esc_html_e('Choose','robert-theme') ?>
                         </a>
                     <?php
                 }?>
